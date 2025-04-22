@@ -4,6 +4,7 @@ import datetime
 import os
 import matplotlib.pyplot as plt
 
+
 def save(filter_name, df, df_name=None):
     """
     Saves the input DataFrame to a CSV file.
@@ -26,13 +27,14 @@ def save(filter_name, df, df_name=None):
         os.makedirs(results_dir)
     filename = os.path.join(results_dir, filename)
     df.to_csv(filename, index=False)
-    
+
+
 def icsd_finder(icsd_true, nov_mat):
     """
-    Matches novel materials with their corresponding ICSD (Inorganic Crystal Structure Database) IDs 
+    Matches novel materials with their corresponding ICSD (Inorganic Crystal Structure Database) IDs
     and updates the novel materials DataFrame with the matched ICSD IDs.
     Args:
-        icsd_true (pandas.DataFrame): A DataFrame containing the true ICSD data. 
+        icsd_true (pandas.DataFrame): A DataFrame containing the true ICSD data.
             It must have at least the following columns:
             - 'pretty_formula': The chemical formula of the material.
             - 'icsd_ids': The corresponding ICSD IDs for the material.
@@ -45,40 +47,47 @@ def icsd_finder(icsd_true, nov_mat):
                 - 'icsd_ids': A list of matched ICSD IDs for each novel material.
             - int: The count of true positive matches (number of novel materials found in `icsd_true`).
     Notes:
-        - If a novel material matches multiple ICSD IDs, they are concatenated into a single string, 
+        - If a novel material matches multiple ICSD IDs, they are concatenated into a single string,
           separated by commas.
         - If no match is found for a novel material, its 'icsd_ids' entry will remain empty.
     """
 
-    icsd_ids = numpy.empty(len(nov_mat['Novel Material']), dtype=object)  # Initialize with dtype=object for strings
-    matches = icsd_true[icsd_true['pretty_formula'].isin(nov_mat['Novel Material']) == True]
-    matches = matches[['pretty_formula', 'icsd_ids']]
-    true_positive = len(matches['pretty_formula'])
-    for idx, materials in enumerate(matches['pretty_formula']):
-        icsd = [matches['icsd_ids'].iloc[idx]] #make sure this is a list (that's why the square brackets)
-        for idy, mat_new in enumerate(nov_mat['Novel Material']):
+    icsd_ids = numpy.empty(
+        len(nov_mat["Novel Material"]), dtype=object
+    )  # Initialize with dtype=object for strings
+    matches = icsd_true[
+        icsd_true["pretty_formula"].isin(nov_mat["Novel Material"]) == True
+    ]
+    matches = matches[["pretty_formula", "icsd_ids"]]
+    true_positive = len(matches["pretty_formula"])
+    for idx, materials in enumerate(matches["pretty_formula"]):
+        icsd = [
+            matches["icsd_ids"].iloc[idx]
+        ]  # make sure this is a list (that's why the square brackets)
+        for idy, mat_new in enumerate(nov_mat["Novel Material"]):
             if materials == mat_new:
-                icsd_ids[idy] = [','.join(map(str, icsd))]
-    nov_mat['icsd_ids'] = icsd_ids
+                icsd_ids[idy] = [",".join(map(str, icsd))]
+    nov_mat["icsd_ids"] = icsd_ids
     return nov_mat, true_positive
+
 
 def p_syn(nov_mat, true_positive):
     """
-    Calculate the percentage of true positives in a dataset of novel materials 
+    Calculate the percentage of true positives in a dataset of novel materials
     and generate a pie chart visualization.
     Args:
-        nov_mat (dict): A dictionary containing a key 'Novel Material' which maps 
+        nov_mat (dict): A dictionary containing a key 'Novel Material' which maps
                         to a list of novel materials.
         true_positive (int): The number of true positive cases identified.
     Returns:
         float: The percentage of true positives in the dataset.
     Side Effects:
-        Generates a pie chart using the `pie_chart` function to visualize the 
+        Generates a pie chart using the `pie_chart` function to visualize the
         proportion of true positives and false positives.
     """
-    
-    p_syn = true_positive*100/ (len(nov_mat['Novel Material']))
-    pie_chart(true_positive, len(nov_mat['Novel Material'])-true_positive, p_syn)
+
+    p_syn = true_positive * 100 / (len(nov_mat["Novel Material"]))
+    pie_chart(true_positive, len(nov_mat["Novel Material"]) - true_positive, p_syn)
     return p_syn
 
 
@@ -112,12 +121,13 @@ def add_details_to_csv(nov_mat, details):
             for values in details[items].values():
                 nov_mat.loc[idy, items] = values
                 idy += 1
-            
+
         else:  # Corrected isinstance usage
             rows = len(details[items])
             for row in range(rows):  # Fixed variable name conflict
                 nov_mat.loc[row, items] = details[items][row]
     return nov_mat
+
 
 def pie_chart(true_positive, false_positive, p_syn):
     """
@@ -139,16 +149,20 @@ def pie_chart(true_positive, false_positive, p_syn):
         None
     """
 
-    labels = ['True Positive', 'False Positive']
+    labels = ["True Positive", "False Positive"]
     sizes = [true_positive, false_positive]
-    colors = ['#66c2a5', '#fc8d62']
+    colors = ["#66c2a5", "#fc8d62"]
     explode = (0.1, 0.1)  # explode the 1st slice
     plt.figure(figsize=(8, 6))
-    plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
-            shadow=True, startangle=140)
-    plt.title(f'P-Syn: {p_syn:.2f}%', fontsize=14)
+    plt.pie(
+        sizes,
+        explode=explode,
+        labels=labels,
+        colors=colors,
+        autopct="%1.1f%%",
+        shadow=True,
+        startangle=140,
+    )
+    plt.title(f"P-Syn: {p_syn:.2f}%", fontsize=14)
     plt.savefig(f"./Results/pie_chart{p_syn}.png")
     plt.show()
-
-
-
