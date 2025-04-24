@@ -1,32 +1,32 @@
-Substituted Element,Coordination,Charge,Ionic Radius,Novel Material,icsd_ids,True Positive,Synthetic P-Value,Conditions,Condition Valueargs,Condition Value
-Ag,IVSQ,2,0.79,CsAgI3,,10,32.25806452,charge,charge,2
-Am,VII,2,1.21,CsAmI3,,,,,coordination,VIII
-Ba,VI,2,1.35,CsBaI3,,,,,target_property,Ionic Radius
-Be,III,2,0.16,CsBeI3,,,,,target_percentage,35
-Ca,VI,2,1,CsCaI3,,,,,,
-Cd,IV,2,0.78,CsCdI3,,,,,,
-Co,IV,2,0.58,CsCoI3,,,,,,
-Cr,VI,2,0.73,CsCrI3,"['[23383, 23382]']",,,,,
-Cu,IV,2,0.57,CsCuI3,,,,,,
-Dy,VI,2,1.07,CsDyI3,['[300286]'],,,,,
-Eu,VI,2,1.17,CsEuI3,,,,,,
-Fe,IV,2,0.63,CsFeI3,,,,,,
-Ge,VI,2,0.73,CsGeI3,['[62559]'],,,,,
-Hg,II,2,0.69,CsHgI3,,,,,,
-Mg,IV,2,0.57,CsMgI3,['[87262]'],,,,,
-Mn,IV,2,0.66,CsMnI3,"['[10042, 15951, 15950, 15952, 15949]']",,,,,
-Nd,VIII,2,1.29,CsNdI3,,,,,,
-Ni,IV,2,0.55,CsNiI3,,,,,,
-No,VI,2,1.1,CsNoI3,,,,,,
-Np,VI,2,1.1,CsNpI3,,,,,,
-Pb,IVPY,2,0.98,CsPbI3,"['[161481, 181288]']",,,,,
-Pd,IVSQ,2,0.64,CsPdI3,,,,,,
-Pt,IVSQ,2,0.6,CsPtI3,,,,,,
-Ra,VIII,2,1.48,CsRaI3,,,,,,
-Sm,VII,2,1.22,CsSmI3,,,,,,
-Sr,VI,2,1.18,CsSrI3,,,,,,
-Ti,VI,2,0.86,CsTiI3,['[154258]'],,,,,
-Tm,VI,2,1.03,CsTmI3,,,,,,
-V,VI,2,0.79,CsVI3,"['[26453, 26454]']",,,,,
-Yb,VI,2,1.02,CsYbI3,['[72342]'],,,,,
-Zn,IV,2,0.6,CsZnI3,,,,,,
+Substituted Element,Coordination,Charge,Ionic Radius,Novel Material
+Ag,IVSQ,2,0.79,CsAgI3
+Am,VII,2,1.21,CsAmI3
+Ba,VI,2,1.35,CsBaI3
+Be,III,2,0.16,CsBeI3
+Ca,VI,2,1,CsCaI3
+Cd,IV,2,0.78,CsCdI3
+Co,IV,2,0.58,CsCoI3
+Cr,VI,2,0.73,CsCrI3
+Cu,IV,2,0.57,CsCuI3
+Dy,VI,2,1.07,CsDyI3
+Eu,VI,2,1.17,CsEuI3
+Fe,IV,2,0.63,CsFeI3
+Ge,VI,2,0.73,CsGeI3
+Hg,II,2,0.69,CsHgI3
+Mg,IV,2,0.57,CsMgI3
+Mn,IV,2,0.66,CsMnI3
+Nd,VIII,2,1.29,CsNdI3
+Ni,IV,2,0.55,CsNiI3
+No,VI,2,1.1,CsNoI3
+Np,VI,2,1.1,CsNpI3
+Pb,IVPY,2,0.98,CsPbI3
+Pd,IVSQ,2,0.64,CsPdI3
+Pt,IVSQ,2,0.6,CsPtI3
+Ra,VIII,2,1.48,CsRaI3
+Sm,VII,2,1.22,CsSmI3
+Sr,VI,2,1.18,CsSrI3
+Ti,VI,2,0.86,CsTiI3
+Tm,VI,2,1.03,CsTmI3
+V,VI,2,0.79,CsVI3
+Yb,VI,2,1.02,CsYbI3
+Zn,IV,2,0.6,CsZnI3
