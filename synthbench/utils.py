@@ -27,6 +27,9 @@ def save(filter_name, df, df_name=None):
         os.makedirs(results_dir)
     filename = os.path.join(results_dir, filename)
     df.to_csv(filename, index=False)
+    return filename
+
+
 
 
 def icsd_finder(icsd_true, nov_mat):
