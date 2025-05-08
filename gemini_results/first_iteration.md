@@ -2,6 +2,14 @@ Settings
 - Conversational style:  Default
 - Response length:  Default
 
+# Sources
+1. CARC proposal call
+2. Training sources
+   a. SARC announcement call for proposals
+   b. Buonassisi SARC proposal
+   c. Buonassisi meeting notes
+   d. Transcripts from Aron Walsh, Joey Montoya, Kyle McCall, Robert Hoye and Simon Clarke
+
 # Unsolicited Summary
 
 These sources explore the **challenge of predicting materials synthesizability**, particularly for inorganic crystals like perovskites. They highlight that current **machine learning and computational methods often propose materials that are difficult or impossible to synthesize**, underscoring the value of incorporating **human intuition and domain knowledge** from expert chemists. The proposed solution involves developing and testing **filters based on established chemical rules, structural characteristics, and synthesis techniques** to narrow down the vast number of computationally predicted materials to those with a higher likelihood of being successfully synthesized. The sources discuss the importance of **understanding reaction pathways, phase diagrams, oxidation states, and ionic radii** as key factors in determining synthesizability and suggest methods for capturing this knowledge into algorithms and workflows.
