@@ -3,12 +3,12 @@ Settings
 - Response length:  Default
 
 # Sources
-1. SARC proposal call
-2. Training sources
-   a. SARC announcement call for proposals
-   b. Buonassisi SARC proposal
-   c. Buonassisi meeting notes
-   d. Transcripts from Aron Walsh, Joey Montoya, Kyle McCall, Robert Hoye and Simon Clarke
+1. SARC proposal call \
+2. Training sources\
+   a. SARC announcement call for proposals\
+   b. Buonassisi SARC proposal\
+   c. Buonassisi meeting notes\
+   d. Transcripts from Aron Walsh, Joey Montoya, Kyle McCall, Robert Hoye and Simon Clarke\
 
 # Unsolicited Summary
 
