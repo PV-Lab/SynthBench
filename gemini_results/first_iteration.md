@@ -3,7 +3,7 @@ Settings
 - Response length:  Default
 
 # Sources
-1. CARC proposal call
+1. SARC proposal call
 2. Training sources
    a. SARC announcement call for proposals
    b. Buonassisi SARC proposal
